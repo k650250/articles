@@ -7,4 +7,5 @@ VBoxManage showvminfo "%VM_NAME%" --machinereadable | findstr /i "VMState=" | fi
 if %ERRORLEVEL% neq 0 (
     VBoxManage startvm "%VM_NAME%" --type headless
 )
+chcp 65001 > nul
 ssh "%VM_USER%@localhost" -p "%VM_PORT%"
