@@ -1,9 +1,9 @@
 # 記事一覧
 
--   [LinuC 学習用仮想環境を Windows ターミナルで構築](./public/12b5692f9e0ca96997fb.md)
--   [PostgreSQL 10 と VirtualBox で、Windows（ホスト OS 兼クライアント）→CentOS（ゲスト OS 兼サーバ）データ送信してみた](./public/1ebd0cb37105decf6c30.md)
--   [CentOS-Linux-7 に Swift-4 をインストールしてみた（Vagrant ユーザー）](./public/0410a3609193747e0ea0.md)
--   [CentOS-Linux-7 に PostgreSQL 10 をインストールしてみた](./public/9204027e4c356830f91d.md)
--   [CentOS-Linux-7 に PostgreSQL 11 をインストールしてみた](./public/aed754b1b232dabd86a5.md)
--   [【Jython】AutoCloseable / Closeable 実装オブジェクトに with 文を使うには](./public/b3c90dd875008ec0ac76.md)
--   [【XML DOM】XML ファイルの Document オブジェクトを取得する関数](./public/cc04268a054a8e40bede.md)
+-   [LinuC 学習用仮想環境を Windows ターミナルで構築](https://qiita.com/k650250/items/12b5692f9e0ca96997fb) <a href="./public/12b5692f9e0ca96997fb.md"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="ソースコード" width="16" height="16"></a>
+-   [PostgreSQL 10 と VirtualBox で、Windows（ホスト OS 兼クライアント）→CentOS（ゲスト OS 兼サーバ）データ送信してみた](https://qiita.com/k650250/items/1ebd0cb37105decf6c30) <a href="./public/1ebd0cb37105decf6c30.md"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="ソースコード" width="16" height="16"></a>
+-   [CentOS-Linux-7 に Swift-4 をインストールしてみた（Vagrant ユーザー）](https://qiita.com/k650250/items/0410a3609193747e0ea0) <a href="./public/0410a3609193747e0ea0.md"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="ソースコード" width="16" height="16"></a>
+-   [CentOS-Linux-7 に PostgreSQL 10 をインストールしてみた](https://qiita.com/k650250/items/9204027e4c356830f91d) <a href="./public/9204027e4c356830f91d.md"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="ソースコード" width="16" height="16"></a>
+-   [CentOS-Linux-7 に PostgreSQL 11 をインストールしてみた](https://qiita.com/k650250/items/aed754b1b232dabd86a5) <a href="./public/aed754b1b232dabd86a5.md"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="ソースコード" width="16" height="16"></a>
+-   [【Jython】AutoCloseable / Closeable 実装オブジェクトに with 文を使うには](https://qiita.com/k650250/items/b3c90dd875008ec0ac76) <a href="./public/b3c90dd875008ec0ac76.md"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="ソースコード" width="16" height="16"></a>
+-   [【XML DOM】XML ファイルの Document オブジェクトを取得する関数](https://qiita.com/k650250/items/cc04268a054a8e40bede) <a href="./public/cc04268a054a8e40bede.md"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="ソースコード" width="16" height="16"></a>
