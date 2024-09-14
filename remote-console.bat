@@ -8,4 +8,9 @@ if %ERRORLEVEL% neq 0 (
     VBoxManage startvm "%VM_NAME%" --type headless
 )
 chcp 65001 > nul
+:userspecified
+if "%VM_USER%"=="" (
+    set /p VM_USER=login: 
+    goto userspecified
+)
 ssh "%VM_USER%@localhost" -p "%VM_PORT%"
