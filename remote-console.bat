@@ -13,4 +13,4 @@ if "%VM_USER%"=="" (
     set /p VM_USER=login: 
     goto userspecified
 )
-ssh "%VM_USER%@localhost" -p "%VM_PORT%"
+ssh -t "%VM_USER%@localhost" -p "%VM_PORT%"
