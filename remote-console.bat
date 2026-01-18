@@ -16,7 +16,7 @@ if "%VBOX_DIR%"=="" (
     ') do set "VBOX_DIR=%%B"
 )
 if "%VBOX_DIR%"=="" (
-    echo Oracle VirtualBox が検出されませんでした。>&2
+    echo VirtualBox が検出されませんでした。>&2
     echo %CMDCMDLINE% | findstr /I " /c " >nul && echo. && pause
     exit /b 1
 ) else set PATH=%VBOX_DIR%;%PATH%
@@ -34,6 +34,11 @@ if %ARGC% equ 2 (
 )
 set VM_USER=%~2
 set VM_HOST=%~3
+if "%VM_HOST%"=="" for /f "tokens=2" %%A in ('VBoxManage guestproperty get "%VM_NAME%" "/VirtualBox/GuestInfo/Net/0/V4/IP"') do if not %%A==value (
+    set VM_HOST=%%A
+    set W=...
+    goto :userspecified
+)
 set W="%VM_HOST:0=%"
 set W="%W:1=%"
 set W="%W:2=%"
@@ -75,6 +80,7 @@ echo Oracle VirtualBox の仮想マシン (VM) のゲストOSを起動し、
 echo これをホストOS側のターミナルで遠隔操作を行います。
 echo.
 echo 使用方法:
+echo     %~nx0 VM名
 echo     %~nx0 VM名 パターン
 echo     %~nx0 VM名 ユーザー名 接続先
 echo.
@@ -83,12 +89,13 @@ echo     VM名	ゲストOSとなるVM名を指定します。
 echo     パターン	SSH構成ファイル ( %%USERPROFILE%%\.ssh\config )
 echo            	に登録された Host パターンを指定します。
 echo     ユーザー名	ゲストOSのログインユーザー名を指定します。
-echo            	"" (空名) を指定すると、標準入力から
+echo            	"" (空値) を指定すると、標準入力から
 echo            	ログインユーザー名を指定できます。
 echo     接続先	ゲストOSの接続先となるホスト名、IPアドレス、
 echo            	又はポート番号を指定します。
 echo            	NATポートフォワーディングを利用する場合は、
 echo            	ポート番号を指定します。
+echo                "" (空値) を指定すると、自動検出を試みます。
 echo %CMDCMDLINE% | findstr /I " /c " >nul && echo. && pause
 :termination
 exit %EXITCODE%
