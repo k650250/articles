@@ -21,7 +21,7 @@ if "%VBOX_DIR%"=="" (
     exit /b 1
 ) else set PATH=%VBOX_DIR%;%PATH%
 set INTERVAL_SECONDS=1
-set TIMEOUT_ERRORLEVEL=255
+set TIMEOUT_ERRORLEVEL=0
 set VM_NAME=%~1
 chcp 65001 > nul
 VBoxManage showvminfo "%VM_NAME%" --machinereadable | findstr /i "VMState=" | findstr /i "running" > nul
@@ -63,12 +63,11 @@ if "%W%"=="" (
 goto :connection
 :polling
 VBoxManage showvminfo "%VM_NAME%" --machinereadable | findstr /i "VMState=" | findstr /i "running" > nul
-if %ERRORLEVEL% neq 0 (
-    goto :termination
-)
+if %ERRORLEVEL% neq 0 goto :termination
 :connection
-ssh -t %SSH_ARGS% 2> nul
+ssh -o BatchMode=yes -o ConnectTimeout=1 -o StrictHostKeyChecking=no %SSH_ARGS% exit 2>&1 | findstr /C:"Connection timed out" /C:"タイムアウト" >nul
 if %ERRORLEVEL% neq %TIMEOUT_ERRORLEVEL% (
+    ssh -t %SSH_ARGS% 2> nul
     set EXITCODE=%ERRORLEVEL%
     echo.
     echo.
